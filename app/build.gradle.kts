@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -20,6 +21,7 @@ android {
     }
     buildFeatures {
         buildConfig = true
+        viewBinding = true
     }
     buildTypes {
         release {
@@ -34,6 +36,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    dataBinding.enable=true
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -61,6 +65,9 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.48")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-    
+    //DataStore
+    implementation("androidx.datastore:datastore-preferences:1.1.0")
+
+
 }
 

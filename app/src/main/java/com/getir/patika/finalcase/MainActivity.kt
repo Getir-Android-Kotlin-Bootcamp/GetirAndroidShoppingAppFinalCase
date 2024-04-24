@@ -10,17 +10,23 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
+    //private lateinit var recyclerView: RecyclerView
     private lateinit var productList: ArrayList<Products>
+    private lateinit var productAdapter: ProductAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //productList = ArrayList<Products>()
+        //productAdapter =ProductAdapter(productList)
        // init()
     }
 
-   /* private fun init(){
-        recyclerView = findViewById(R.id.recyclerView)
+   /* Yorum satırına aldığım kodları horizontal ve vertical scrolları aynı sayfada yapamadığım için
+   kullanmadım.
+
+        private fun init(){
+        recyclerView = findViewById(R.id.product_list_rv)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
         productList = ArrayList()
