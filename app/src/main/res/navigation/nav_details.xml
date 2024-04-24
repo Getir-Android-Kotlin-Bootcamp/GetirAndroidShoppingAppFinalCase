@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_details"
+    app:startDestination="@id/productList">
+
+    <fragment
+        android:id="@+id/productList"
+        android:name="com.getir.patika.finalcase.ProductList"
+        android:label="ProductList"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_productList_to_productDetailFirst"
+            app:destination="@id/productDetailFirst" />
+        <action
+            android:id="@+id/action_productList_to_basket"
+            app:destination="@id/basket" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFirst"
+        android:name="com.getir.patika.finalcase.ProductDetailFirst"
+        android:label="ProductDetailFirst"
+        tools:layout="@layout/fragment_product_detail_first">
+        <action
+            android:id="@+id/action_productDetailFirst_to_productDetailSecond"
+            app:destination="@id/productDetailSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailSecond"
+        android:name="com.getir.patika.finalcase.ProductDetailSecond"
+        android:label="ProductDetailSecond"
+        tools:layout="@layout/fragment_product_detail_second">
+        <action
+            android:id="@+id/action_productDetailSecond_to_productDetailThird"
+            app:destination="@id/productDetailThird" />
+        <action
+            android:id="@+id/action_productDetailSecond_to_productDetailFirst"
+            app:destination="@id/productDetailFirst" />
+        <action
+            android:id="@+id/action_productDetailSecond_to_basket"
+            app:destination="@id/basket" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailThird"
+        android:name="com.getir.patika.finalcase.ProductDetailThird"
+        android:label="ProductDetailThird"
+        tools:layout="@layout/fragment_product_detail_third">
+        <action
+            android:id="@+id/action_productDetailThird_to_productDetailSecond"
+            app:destination="@id/productDetailSecond" />
+        <action
+            android:id="@+id/action_productDetailThird_to_basket"
+            app:destination="@id/basket" />
+    </fragment>
+    <fragment
+        android:id="@+id/basket"
+        android:name="com.getir.patika.finalcase.Basket"
+        android:label="Basket"
+        tools:layout="@layout/fragment_basket">
+        <action
+            android:id="@+id/action_basket_to_productList"
+            app:destination="@id/productList" />
+    </fragment>
+</navigation>
